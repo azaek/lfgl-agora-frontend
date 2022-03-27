@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .bg-gradient {
+    @apply bg-gradient-to-r from-[#FBED96] to-[#ABECD6];
+  }
+
+  .gradient-spot {
+    @apply bg-gradient-to-br to-[#FBED96] from-[#ABECD6];
+  }
+
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#FBED96] via-[#ABECD6] to-[#ABECD6];
+  }
+
+  .t-all {
+    @apply transition-all ease-in-out duration-300;
+  }
+  .t-all-100 {
+    @apply transition-all ease-in-out duration-100;
+  }
+
+  .button-s {
+    @apply  px-4 py-2 text-white rounded-lg bg-[#212427] t-all  active:border border-[#ABECD6] hover:ring-2 ring-[#ABECD6]/30;
+  }
+  .button-s-d {
+    @apply  px-4 py-2 text-white/30 rounded-lg bg-[#212427] t-all hover:ring-0  border-none outline-none;
+  }
+  .button-o {
+    @apply  px-2 py-1 text-white rounded-lg border-[#212427] t-all border hover:ring-2 ring-[#ABECD6]/30;
+  }
+  .button-so {
+    @apply  px-4 py-2 text-white rounded-lg bg-[#212427] border-[#2F3336] t-all border hover:ring-2 ring-[#ABECD6]/30;
+  }
+  .button-t {
+    @apply  px-4 py-1 outline-none border-none rounded-lg t-all border ;
+  }
+
+  .btn-hvr {
+    @apply  t-all  active:border border-[#ABECD6] hover:ring-2 ring-[#ABECD6]/30;
+  }
+
+}
+
+* {
+  font-family: 'Lexend', sans-serif;
+}
