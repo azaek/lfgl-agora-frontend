@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
-const DaoListItem = ({ data }) => {
+const DaoListItem = () => {
 
     const route = useRouter();
 
     const handleClick = () => {
-        route.push(`/communities/${data.id}`);
+        // route.push(`/communities/${data.id}`);
     }
 
 
@@ -16,10 +16,10 @@ const DaoListItem = ({ data }) => {
             </div>
 
             <div className="flex flex-col justify-evenly h-full">
-                <p className="text-[8px] text-white/60 tracking-widest uppercase">{data.daoType}</p>
-                <h3 className="text-xs text-white/90 ">{data.daoName}</h3>
+                <p className="text-[8px] text-white/60 tracking-widest uppercase">type</p>
+                <h3 className="text-xs text-white/90 ">name</h3>
                 <p className="text-[10px] text-white/60">
-                    {data.daoDescription}
+                    description
                 </p>
             </div>
         </div>

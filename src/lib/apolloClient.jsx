@@ -4,7 +4,7 @@ import { onError } from "@apollo/client/link/error";
 function CreateApolloClient() {
 
     const httpLink = new HttpLink({
-        uri: "http://localhost/",
+        uri: "https://agora-server-zj4ep.ondigitalocean.app/",
         headers: {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',

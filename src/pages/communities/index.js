@@ -11,13 +11,6 @@ import { GET_DAOS } from '../../lib/queries'
 const CommunitiesPage = () => {
 
     const user = useSelector(state => state.user);
-    const { loading, error, data } = useQuery(GET_DAOS, {
-        context: {
-            headers: {
-                "Authorization": "Bearer " + user.token
-            }
-        }
-    })
 
     const [showAll, setShowAll] = useState(false)
 
@@ -56,7 +49,7 @@ const CommunitiesPage = () => {
                     <div className="w-full flex-[0.7] flex flex-col px-10">
                         <div className="w-full mt-10"/>
                     
-                        {data && isAMember(data.getDaos) &&
+                        {true &&
                             <>
 
                                 <div className="flex justify-between items-end">
@@ -74,17 +67,17 @@ const CommunitiesPage = () => {
                                 </div>
 
                                 <div className="w-full grid grid-cols-3 grid-flow-row items-center gap-2 mt-6 pb-6">
-                                    {data &&
-                                        getJoinedDos(data.getDaos).slice(0, showAll ? getJoinedDos().length : 3).map((dao) => (
-                                            <DaoListItemSmall data={dao} key={dao.id} />
+                                    {true &&
+                                        Array.from({ length: 5}).map((dao, i) => (
+                                            <DaoListItemSmall key={i} />
                                         ))
                                     }
-                                    {
+                                    {/* {
                                         loading && <p className="w-full text-center py-10 text-white/40 text-sm">Loading...</p>
                                     }
                                     {
                                         error && <p className="w-full text-center py-10 text-white/30 text-sm">Error fetching DAOs!</p>
-                                    }
+                                    } */}
                                 </div>
                             </>
                         }
@@ -105,18 +98,18 @@ const CommunitiesPage = () => {
 
                         {/* Explore Communities list */}
                         <div className="w-full grid grid-cols-2 items-center gap-2 mt-6 pb-6">
-                            {data &&
-                                data.getDaos.map((dao) => (
-                                    <DaoListItem data={dao} key={dao.id} />
+                            {true &&
+                                Array.from({ length: 5}).map((dao,i) => (
+                                    <DaoListItem  key={i} />
                                 ))
                             }
 
-                            {
+                            {/* {
                                 loading && <p className="w-full text-center py-10 text-white/40 text-sm">Loading...</p>
                             }
                             {
                                 error && <p className="w-full text-center py-10 text-white/30 text-sm">Error fetching DAOs!</p>
-                            }
+                            } */}
                         </div>
                     </div>
                     <div className="w-[30%] flex-[0.3] h-screen sticky top-0 flex flex-col items-center px-10">
